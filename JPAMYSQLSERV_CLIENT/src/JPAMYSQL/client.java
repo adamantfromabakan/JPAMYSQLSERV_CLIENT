@@ -7,7 +7,6 @@ import javax.naming.Context;
 
 import DAO.DBManagerInterface;
 import DAO.greetings;
-import DAO.greetingsinterface;
 
 public class client {
 	   public static void main(String[] args) throws Exception
@@ -15,7 +14,11 @@ public class client {
 		   Context context = getInitialContext();
 		   //greetingsinterface grdb = (greetingsinterface) context.lookup("ejb:/JPAMYSQLSERV/greetingsbean!DAO.greetingsinterface");
 		   DBManagerInterface grdb = (DBManagerInterface) context.lookup("ejb:/JPAMYSQLSERV/DBManager!DAO.DBManagerInterface");
-		   grdb.creategreetings("!!!!!!!!!!!!!!! Create record !!!!!!!!!!");
+		   System.err.println(grdb.creategreetings("!!!!!!!!!!!!!!! Create record !!!!!!!!!!"));
+		   System.err.println(grdb.updategreetings(2,  "!!!!!!!!!!!!!!! Updated record !!!!!!!!!!"));
+		   System.err.println(grdb.updategreetings(3,  "!!!!!!!!!!!!!!! Updated record !!!!!!!!!!"));
+		   System.err.println(grdb.removegreetings(4));
+		   
 		   //System.err.println(grdb.INS_GREETINGS("!!!!!!!!!First program JPA!!!!!!"));
 		   //System.err.println(grdb.REM_GREETINGS(3));
 		   //System.err.println(grdb.UPD_GREETINGS(4,"!!!!!!!!!   UPDATED  !!!!!!"));
