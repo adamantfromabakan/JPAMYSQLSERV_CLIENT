@@ -23,13 +23,22 @@ public class client {
 		   //System.err.println(grdb.REM_GREETINGS(3));
 		   //System.err.println(grdb.UPD_GREETINGS(4,"!!!!!!!!!   UPDATED  !!!!!!"));
 		   //System.err.println(grdb.UPD_GREETINGS(5,"!!!!!!!!!   UPDATED  !!!!!!"));
-		   //Collection<greetings> list = grdb.findAllGreetings();
+		   
+		   Collection<greetings> list = grdb.findAllGreetings();
 		   ////System.out.println(list.toString());
-		   //for(greetings tmp : list) {
-			//	 System.out.println("Id=" + tmp.getId() + " Name=" + tmp.getName());
-		     //  }
-		   //final greetings gr = grdb.FindGreetings(2);
-		   //System.out.println(grdb.FindGreetings(0));
+		   for(greetings tmp : list) {
+				 System.out.println("Id=" + tmp.getId() + " Name=" + tmp.getName());
+		       }
+		   
+		   System.out.println("*************query one record*******************");		   
+		   Collection<greetings> list_id = grdb.findGreetingsId(1);
+		   System.out.println(list_id.toString());		
+		   for(greetings tmp2 : list_id) {
+				 System.out.println("Id=" + tmp2.getId() + " Name=" + tmp2.getName());
+		       }
+		   
+		   //final greetings gr = grdb.findGreetingsId(2);
+		   //System.out.println(grdb.findGreetingsId(0));
 		   //System.out.println(gr.getName());
 	   }
 	
